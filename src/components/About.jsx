@@ -1,15 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const About = () => (
-  <section id="about" className="p-8 bg-white dark:bg-gray-900 dark:text-gray-200 fade-in">
-    <h2 className="text-3xl mb-4">Sobre Mí</h2>
-    <p className="mb-4">Hola, soy [Tu Nombre], un desarrollador fullstack junior con experiencia en [tu especialidad]. Me apasiona [tu pasión relacionada con el desarrollo] y estoy siempre buscando aprender y mejorar mis habilidades.</p>
-    <ul className="list-disc ml-8">
-      <li>Habilidad 1: [Descripción de la habilidad]</li>
-      <li>Habilidad 2: [Descripción de la habilidad]</li>
-      <li>Habilidad 3: [Descripción de la habilidad]</li>
-    </ul>
-  </section>
-);
+const About = () => {
+  return (
+    <div className="container mx-auto p-4 text-center fade-in">
+      <h1 className="text-4xl font-extrabold mb-4 animate-color-change">About Me</h1>
+      <p className="text-xl mb-4">I am a passionate developer with experience in building modern web applications.</p>
+      <Link to="/contact" className="p-3 bg-brand-green text-white rounded hover:bg-green-700">Contact Me</Link>
+    </div>
+  );
+};
 
 export default About;

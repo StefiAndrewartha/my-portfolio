@@ -2,49 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Inter', sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+@layer base {
+  body {
+    @apply transition-colors duration-300 ease-in-out bg-gray-100 dark:bg-gray-900 dark:text-white;
+  }
 
-header {
-  transition: background-color 0.3s ease;
-}
+  .navbar, .footer, .card {
+    @apply transition-transform duration-300 ease-in-out;
+  }
 
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  .card:hover {
+    @apply transform scale-105;
+  }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+  .fade-in {
+    @apply animation-fade-in;
+  }
 
-.fade-in {
-  animation: fadeIn 1s ease-in forwards;
-}
+  .bounce-in {
+    @apply animation-bounce-in;
+  }
 
-.slide-in {
-  animation: slideIn 0.5s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideIn {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-button {
-  cursor: pointer;
-}
-
-.bg-pattern {
-  background: linear-gradient(135deg, #ffcc33 25%, transparent 25%) -50px 0/ 100px 100px, 
-              linear-gradient(225deg, #ffcc33 25%, transparent 25%) -50px 0/ 100px 100px, 
-              linear-gradient(315deg, #ffcc33 25%, transparent 25%),
-              linear-gradient(45deg, #ffcc33 25%, transparent 25%);
+  .color-change {
+    @apply animation-color-change;
+  }
 }

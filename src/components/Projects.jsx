@@ -2,43 +2,44 @@ import React from 'react';
 
 const projects = [
   {
-    title: "ColorGame",
-    description: "Este es un juego para adivinar colores basado en códigos RGB.",
-    demoLink: "/projects/ColorGame/index.html",
-    codeLink: "https://github.com/StefiAndrewartha/colorgame",
-    imageUrl: "https://via.placeholder.com/300"
+    name: 'To Do List',
+    description: 'A simple to-do list app.',
+    demoLink: '/projects/ToDoList/index.html',
+    codeLink: 'https://github.com/tu-usuario/ToDoList'
   },
   {
-    title: "ToDoList",
-    description: "Una aplicación para gestionar tareas diarias de manera eficiente.",
-    demoLink: "/projects/ToDoList/index.html",
-    codeLink: "https://github.com/StefiAndrewartha/ToDoList",
-    imageUrl: "https://via.placeholder.com/300"
+    name: 'Typer-D',
+    description: 'A typing speed test app.',
+    demoLink: '/projects/TyperD/index.html',
+    codeLink: 'https://github.com/tu-usuario/TyperD'
   },
   {
-    title: "TyperD",
-    description: "Un juego de mecanografía para mejorar la velocidad y precisión al teclear.",
-    demoLink: "/projects/TyperD/index.html",
-    codeLink: "https://github.com/StefiAndrewartha/TyperD",
-    imageUrl: "https://via.placeholder.com/300"
-  },
+    name: 'Color Game',
+    description: 'A color guessing game.',
+    demoLink: '/projects/ColorGame/index.html',
+    codeLink: 'https://github.com/tu-usuario/ColorGame'
+  }
 ];
 
-const Projects = () => (
-  <section id="projects" className="p-8 bg-gray-100 dark:bg-gray-800 dark:text-gray-200 slide-in">
-    <h2 className="text-3xl mb-4">Proyectos</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-      {projects.map((project, index) => (
-        <div key={index} className="card bg-white dark:bg-gray-700 dark:text-gray-200 shadow-md rounded-lg p-4 hover:shadow-lg hover:transform hover:scale-105 transition-transform duration-300">
-          <img src={project.imageUrl} alt={project.title} className="mb-4 rounded-lg" />
-          <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-          <p className="mb-4">{project.description}</p>
-          <a href={project.demoLink} className="btn btn-primary mb-2 block text-center bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Ver Demo</a>
-          <a href={project.codeLink} className="btn btn-secondary block text-center bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600">Ver Código</a>
-        </div>
-      ))}
+const Projects = () => {
+  return (
+    <div className="container mx-auto p-4 text-center fade-in">
+      <h1 className="text-4xl font-extrabold mb-4 animate-color-change">My Projects</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {projects.map((project, index) => (
+          <div key={index} className="card border p-4 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-bold mb-2">{project.name}</h2>
+            <p className="text-gray-600 mb-4">{project.description}</p>
+            <div className="flex justify-center space-x-4">
+              <a href={project.demoLink} className="p-2 bg-brand-green text-white rounded hover:bg-green-700">Demo</a>
+              <a href={project.codeLink} className="p-2 bg-brand-blue text-white rounded hover:bg-blue-700">Code</a>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  </section>
-);
+  );
+};
 
 export default Projects;
+

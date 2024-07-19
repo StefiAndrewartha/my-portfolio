@@ -1,0 +1,10 @@
+.typer-d {
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* Estilos específicos para TyperD */
+body {
+  font-family: Arial, sans-serif;
+}

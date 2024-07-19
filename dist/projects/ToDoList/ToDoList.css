@@ -1,0 +1,10 @@
+.to-do-list {
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* Estilos específicos para ToDoList */
+body {
+  font-family: Arial, sans-serif;
+}

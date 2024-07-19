@@ -1,30 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    if (!darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
-
   return (
-    <header className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 dark:bg-gray-800 text-white p-4 flex justify-between items-center fixed top-0 w-full z-50 shadow-lg">
-      <h1 className="text-2xl">Mi Portafolio</h1>
-      <nav className="flex space-x-4">
-        <a href="#about" className="hover:text-yellow-300">Sobre Mí</a>
-        <a href="#projects" className="hover:text-yellow-300">Proyectos</a>
-        <a href="#contact" className="hover:text-yellow-300">Contacto</a>
-        <button onClick={toggleDarkMode} className="ml-4 bg-yellow-500 px-3 py-2 rounded hover:bg-yellow-600">
-          {darkMode ? 'Modo Claro' : 'Modo Oscuro'}
-        </button>
-      </nav>
-    </header>
+    <nav className="bg-brand-blue text-white p-4 fixed w-full top-0 z-10 shadow-md">
+      <div className="container mx-auto flex justify-between items-center">
+        <h1 className="text-3xl font-extrabold animate-color-change">My Portfolio</h1>
+        <ul className="flex space-x-4 text-lg">
+          <li><Link to="/" className="hover:text-brand-green">Home</Link></li>
+          <li><Link to="/projects" className="hover:text-brand-green">Projects</Link></li>
+          <li><Link to="/about" className="hover:text-brand-green">About</Link></li>
+          <li><Link to="/contact" className="hover:text-brand-green">Contact</Link></li>
+        </ul>
+        <ThemeToggle />
+      </div>
+    </nav>
   );
 };
 
 export default Header;
+
